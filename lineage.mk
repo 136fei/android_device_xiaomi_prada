@@ -31,6 +31,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := prada
 PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_MODEL := Redmi 4
 PRODUCT_NAME := lineage_prada
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
@@ -41,5 +42,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Xiaomi/prada/prada:6.0.1/MMB29M/7.3.30:user/release-keys \
     PRIVATE_BUILD_DESC="prada-user 6.0.1 MMB29M 7.3.30 release-keys"
 
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
-    ro.product.model

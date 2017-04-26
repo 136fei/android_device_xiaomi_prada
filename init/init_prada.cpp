@@ -107,38 +107,3 @@ static void init_alarm_boot_properties()
     }
 }
 
-void vendor_load_properties()
-{
-    char device[PROP_VALUE_MAX];
-    int rc;
-
-    rc = property_get("ro.cm.device", device);
-    if (!rc || strncmp(device, "prada", PROP_VALUE_MAX))
-        return;
-
-    import_kernel_cmdline(0, import_cmdline);
-
-    property_set("ro.product.wt.boardid", board_id);
-
-    if (!strcmp(board_id, "S88537AA1")) {
-        property_set("ro.build.display.wtid", "SW_S88537AA1_V071_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537AB1")) {
-        property_set("ro.build.display.wtid", "SW_S88537AB1_V071_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537AC1")) {
-        property_set("ro.build.display.wtid", "SW_S88537AC1_V071_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537BA1")) {
-        property_set("ro.build.display.wtid", "SW_S88537BA1_V071_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537CA1")) {
-        property_set("ro.build.display.wtid", "SW_S88537CA1_V071_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537EC1")) {
-        property_set("ro.build.display.wtid", "SW_S88537EC1_V071_M20_MP_XM");
-    }
-
-    if (!strcmp(board_id, "S88537AB1")) {
-        property_set("ro.product.model", "Redmi 3X");
-    } else {
-        property_set("ro.product.model", "Redmi 3S");
-    }
-
-    init_alarm_boot_properties();
-}
